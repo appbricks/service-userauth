@@ -4,6 +4,8 @@ spring:
     mongodb:
       host: localhost
       port: 27017
+  thymeleaf:
+    cache: false
 
 # Tomcat Server
 server:
@@ -13,7 +15,7 @@ server:
 # Social
 social:
   encryption:
-    key: leapvest123
+    key: userf123
   google:
     client.id: 375346124902-24mnek6o98vggco052j8087drfjllsd0.apps.googleusercontent.com
     client.secret: WuDse5l0BjZtVz2tY80sOJvR
@@ -46,15 +48,23 @@ logging:
 ---
 spring:
   profiles: test
+  thymeleaf:
+    cache: true
 
 ---
 spring:
   profiles: production
+  thymeleaf:
+    cache: true
 
 ---
 spring:
   profiles: production-east
+  thymeleaf:
+    cache: true
 
 ---
 spring:
   profiles: production-west
+  thymeleaf:
+    cache: true
