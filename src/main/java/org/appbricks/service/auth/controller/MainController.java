@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Controller
-public class HomePageController {
+public class MainController {
 
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
@@ -22,6 +22,6 @@ public class HomePageController {
         model.addAttribute("content", String.format(template, name));
 
         // renders /templates/hello.jsp
-        return "home";
+        return "main";
     }
 }

@@ -19,7 +19,7 @@ group = 'org.appbricks'
 version =  "0.1.0-SNAPSHOT"
 
 war {
-    baseName = "ab-user-auth-service"
+    baseName = "ab-service-userauth"
 }
 
 repositories {
