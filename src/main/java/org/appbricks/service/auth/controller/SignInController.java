@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Login controller simply returns reference to login view.
  */
 @Controller
-public class LoginController {
+public class SignInController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SignInController.class);
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String showLoginPage() {

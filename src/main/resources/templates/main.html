@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html layout:decorator="layout"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -25,7 +27,17 @@
 
 </head>
 <body>
-<div  class="appbricks-bg" style="height:100%">
+<div layout:fragment="content" style="height:100%">
+    <div class="container">
+        <h1 style="color:white;margin-top:60pt;">@ppBricks Identity Management Services</h1>
+        <p style="color:white;width:400pt;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+            Phasellus et placerat elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+            Phasellus et placerat elit.
+        </p>
+    </div>
 </div>
 
 <!-- JQuery -->
