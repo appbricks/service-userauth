@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html layout:decorator="layout"
+<html layout:decorator="layouts/home"
     xmlns:th="http://www.thymeleaf.org"
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title>AppBricks Identity Managment Service</title>
+    <title>Identity Management Services Home</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
@@ -24,9 +24,10 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" th:href="@{css/main.css}" href="../static/css/main.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap-social.css}" href="../../static/css/bootstrap-social.css"/>
 
 </head>
-<body>
+<body style="background-color: #a9a9a9">
 <div layout:fragment="content" style="height:100%">
     <div class="container">
         <h1 style="color:white;margin-top:60pt;">@ppBricks Identity Management Services</h1>

@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import org.springframework.social.security.SpringSocialConfigurer;
+import org.thymeleaf.extras.springsecurity3.dialect.SpringSecurityDialect;
+import org.thymeleaf.spring4.SpringTemplateEngine;
 
 import javax.inject.Inject;
 
@@ -31,9 +33,9 @@ public class SecurityContext
             //Spring Security ignores request to static resources such as CSS or JS files.
             .ignoring()
             .antMatchers(
-                    "/css/**",
-                    "/images/**",
-                    "/js/**");
+                "/css/**",
+                "/images/**",
+                "/js/**");
     }
 
     @Override
@@ -42,24 +44,23 @@ public class SecurityContext
         
         http
             //Configures form login
-                .formLogin()
-                .loginPage("/login")
-                .loginProcessingUrl("/login/authenticate")
-                .failureUrl("/login?error=bad_credentials")
+            .formLogin()
+            .loginPage("/signin")
+            .loginProcessingUrl("/login/authenticate")
+            .failureUrl("/login?error=bad_credentials")
             //Configures the logout function
-                .and()
+            .and()
                 .logout()
                 .deleteCookies("JSESSIONID")
-                .logoutUrl("/logout")
-                .logoutSuccessUrl("/login")
+                .logoutUrl("/signout")
+                .logoutSuccessUrl("/signin")
             //Configures url based authorization
             .and()
                 .authorizeRequests()
                     //Anyone can access the urls
                     .antMatchers(
                         "/",
-                        "/login",
-                        "/auth/**",
+                        "/signin",
                         "/signup/**").permitAll()
                     //The rest of the our application is protected.
                     .antMatchers("/**").hasRole("USER")

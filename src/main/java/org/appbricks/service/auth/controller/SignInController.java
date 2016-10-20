@@ -14,7 +14,7 @@ public class SignInController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SignInController.class);
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/signin", method = RequestMethod.GET)
     public String showLoginPage() {
         
         return "main";

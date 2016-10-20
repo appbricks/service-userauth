@@ -19,7 +19,7 @@ group = 'org.appbricks'
 version =  "0.1.0-SNAPSHOT"
 
 war {
-    baseName = "ab-service-userauth"
+    baseName = "ab-userauth-service"
 }
 
 repositories {
@@ -38,8 +38,10 @@ dependencies {
         ["org.springframework.social:spring-social-twitter"],
         ["org.springframework.social:spring-social-facebook"],
         ["org.springframework.social:spring-social-google:1.0.0.RC1"],
+        ["org.thymeleaf.extras:thymeleaf-extras-springsecurity3:2.1.1.RELEASE"],
         ["javax.servlet:jstl:1.2"],
-        ["org.appbricks:ab-user-model:0.1.0-SNAPSHOT"]
+        ["org.appbricks:ab-model-user:0.1.0-SNAPSHOT"],
+        ["org.appbricks:ab-model-application:0.1.0-SNAPSHOT"]
     )
     compile('org.springframework:spring-orm:4.1.4.RELEASE') {
         exclude group: 'commons-logging', module: 'commons-logging'

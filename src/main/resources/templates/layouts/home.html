@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">@ppBricks Layout</title>
+    <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">@ppBricks</title>
+    <link rel="icon" th:href="@{images/appbricks-logo.png}" href="../../static/images/appbricks-logo.png" sizes="16x16" type="image/png"/>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
@@ -24,6 +25,7 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" th:href="@{css/main.css}" href="../../static/css/main.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap-social.css}" href="../../static/css/bootstrap-social.css"/>
 
 </head>
 <body class="appbricks-bg">
@@ -49,7 +51,7 @@
     </div>
 </div>
 <div class="container">
-    <div layout:fragment="content">
+    <div layout:fragment="content" style="color:white;margin-top:10pt;">
         <!-- ============================================================================ -->
         <!-- This content is only used for static prototyping purposes (natural templates)-->
         <!-- and is therefore entirely optional, as this markup fragment will be included -->
@@ -65,9 +67,12 @@
         </p>
     </div>
     <!-- <div th:replace="fragments/footer :: ${#authentication.principal.isAdmin()} ? 'footer-admin' : 'footer'"> -->
-    <div th:replace="fragments/footer :: footer">
+    <div th:replace="fragments/footer :: footer" style="color:white;margin-top:60pt;">
         &copy; 2015 @ppBricks (layout)
     </div>
+    <!-- Home page dialogs -->
+    <div th:replace="fragments/signin :: signin_ext"/>
+    <!--<div th:replace="fragments/signin :: signup"/>-->
 </div>
 
 <!-- JQuery -->

@@ -11,17 +11,9 @@ import java.util.concurrent.atomic.AtomicLong;
 @Controller
 public class MainController {
 
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
-
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String greeting(@RequestParam(value="name", defaultValue="World") String name, Model model) {
 
-        // let’s pass some variables to the view script
-        model.addAttribute("id", counter.incrementAndGet());
-        model.addAttribute("content", String.format(template, name));
-
-        // renders /templates/hello.jsp
         return "main";
     }
 }

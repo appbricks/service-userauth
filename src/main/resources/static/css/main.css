@@ -12,3 +12,13 @@ html, body {
     -o-background-size: cover;
     background-size: cover;
 }
+
+/* Bootstrap Navbar Overrides */
+
+.navbar.transparent.navbar-inverse {
+    opacity: 0.75;
+}
+
+.modal-content-dark .modal-content {
+    background-color: #8b8b8b;
+}
